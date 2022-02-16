@@ -10,6 +10,7 @@ module.exports = withSentryConfig(
       disableClientWebpackPlugin: true,
     },
     webpack: (config, { isServer /*, buildId */ }) => {
+
       if (!isServer) {
         config.resolve.alias["@sentry/node"] = "@sentry/browser";
       }
